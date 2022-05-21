@@ -2,7 +2,30 @@ extends ../layouts/default
 
 block content
 	.container
-		h1 Welcome to Static Web!
-		br
-		p  A very cool website.
+		#myCarousel.carousel.slide(data-bs-ride="false")
+			.carousel-indicators
+				button(type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1")
+				button(type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2")
+				button(type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3")
+			.carousel-inner
+				.carousel-item.active
+					img.d-block.w-100(src="images/carousel0.png" alt="")
+					.carousel-caption.d-none.d-md-block
+						h3 Welcome!
+						h5 Do you know how to answer these two questions? I bet you don't know! That's why you have to view our website to broaden your knowledge bank.
+				.carousel-item
+					img.d-block.w-100(src="images/carousel1.png" alt="")
+					.carousel-caption.d-none.d-md-block
+						h5 Press on the picture for the answer.
+				.carousel-item
+					img.d-block.w-100(src="images/carousel2.png" alt="")
+					.carousel-caption.d-none.d-md-block
+						h5 Press on the picture for the answer.
+
+			button.carousel-control-prev(type="button" data-bs-target="#myCarousel" data-bs-slide="prev")
+				span.carousel-control-prev-icon(aria-hidden="true")
+				span.visually-hidden Previous
+			button.carousel-control-next(type="button" data-bs-target="#myCarousel" data-bs-slide="next")
+				span.carousel-control-next-icon(aria-hidden="true")
+				span.visually-hidden Next
 		
