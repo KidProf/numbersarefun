@@ -3,5 +3,11 @@
         span.navbar-toggler-icon.navbar-light
     .collapse.navbar-collapse#orderNav
         ul.nav.navbar-nav.mr-auto
-            li.nav-item: a.nav-link(href="index.html") Home
-            li.nav-item: a.nav-link(href="abouts.html") Abouts
+            if currentPage == "home"
+                li.nav-item: a.nav-link.active(href="index.html") HOME
+            else
+                li.nav-item: a.nav-link(href="index.html") HOME
+            if currentPage == "abouts"
+                li.nav-item: a.nav-link.active(href="abouts.html") ABOUTS
+            else
+                li.nav-item: a.nav-link(href="abouts.html") ABOUTS

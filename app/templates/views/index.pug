@@ -1,5 +1,8 @@
 extends ../layouts/default
 
+block variables
+	- var currentPage = "home"
+
 block content
 	.container
 		#myCarousel.carousel.slide(data-bs-ride="false")
