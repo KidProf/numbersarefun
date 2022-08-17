@@ -1,5 +1,14 @@
 extends ../layouts/default
 
+block variables
+	- 
+		let cardContents = [
+			{"title": "9", "description": "9, may just be an ordinary number to you. However, it actually means longevity to Chinese people. Also, there are different miracles of 9. Therefore, why not learn the interesting facts of 9 together?"},
+			{"title": "11", "description": "11, is well-known to be a prime number. However, not many of us know that there are a lot of 'magic' can be done from this number. For example, any power of 11 will ends with 1 in the units digit. Interesting, right?"},
+			{"title": "30", "description": "What are primordial numbers? What is so special about them? By using the number 30, we will answer all those questions, and show some interesting theorems about those mysterious primordial numbers!"},
+			{"title": "365.25", "link": "365-25", "description": "How many days are there from year 2001 to 2100? It may take you quite some time to find the answer if you count in one by one. Therefore, we would like to introduce a better way to calculate the number of days exist during a given period of time accurately."},
+		];
+
 block content
 	.container
 		#myCarousel.carousel.slide.mb-4(data-bs-ride="false")
@@ -29,31 +38,40 @@ block content
 				span.carousel-control-next-icon(aria-hidden="true")
 				span.visually-hidden Next
 		#myCards.row
-			.col-12.col-sm-6.col-xl-3.my-4: .card.h-100
-				.card-header 
-					h3 9
-				img.card-img-top(src="images/card9.png" alt="")
-				.card-body
-					p.card-text
-						| 9, may just be an ordinary number to you. However, it actually means longevity to Chinese people. Also, there are different miracles of 9. Therefore, why not learn the interesting facts of 9 together?
-			.col-12.col-sm-6.col-xl-3.my-4: .card.h-100
-				.card-header
-					h3 11
-				img.card-img-top(src="images/card11.png" alt="")
-				.card-body
-					p.card-text
-						| 11, is well-known to be a prime number. However, not many of us know that there are a lot of ‘magic’ can be done from this number. For example, any power of 11 will ends with 1 in the units digit. Interesting, right?
-			.col-12.col-sm-6.col-xl-3.my-4: .card.h-100
-				.card-header
-					h3 30
-				img.card-img-top(src="images/card30.png" alt="")
-				.card-body
-					p.card-text
-						| What are primordial numbers? What is so special about them? By using the number 30, we will answer all those questions, and show some interesting theorems about those mysterious primordial numbers!
-			.col-12.col-sm-6.col-xl-3.my-4: .card.h-100
-				.card-header
-					h3 365.25
-				img.card-img-top(src="images/card365-25.png" alt="")
-				.card-body
-					p.card-text
-						| How many days are there from year 2001 to 2100? It may take you quite some time to find the answer if you count in one by one. Therefore, we would like to introduce a better way to calculate the number of days exist during a given period of time accurately.
+			for cardContent in cardContents
+				.col-12.col-sm-6.col-xl-3.my-4: .card.h-100
+					.card-header 
+						h3=cardContent.title
+					img.card-img-top(src="images/card"+(cardContent.link || cardContent.title)+".png" alt="")
+					.card-body
+						p.card-text
+							| #{cardContent.description} <br /> Click the card for more
+			
+			//- .col-12.col-sm-6.col-xl-3.my-4: .card.h-100
+			//- 	.card-header 
+			//- 		h3 9
+			//- 	img.card-img-top(src="images/card9.png" alt="")
+			//- 	.card-body
+			//- 		p.card-text
+			//- 			| 9, may just be an ordinary number to you. However, it actually means longevity to Chinese people. Also, there are different miracles of 9. Therefore, why not learn the interesting facts of 9 together?
+			//- .col-12.col-sm-6.col-xl-3.my-4: .card.h-100
+			//- 	.card-header
+			//- 		h3 11
+			//- 	img.card-img-top(src="images/card11.png" alt="")
+			//- 	.card-body
+			//- 		p.card-text
+			//- 			| 11, is well-known to be a prime number. However, not many of us know that there are a lot of 'magic' can be done from this number. For example, any power of 11 will ends with 1 in the units digit. Interesting, right?
+			//- .col-12.col-sm-6.col-xl-3.my-4: .card.h-100
+			//- 	.card-header
+			//- 		h3 30
+			//- 	img.card-img-top(src="images/card30.png" alt="")
+			//- 	.card-body
+			//- 		p.card-text
+			//- 			| What are primordial numbers? What is so special about them? By using the number 30, we will answer all those questions, and show some interesting theorems about those mysterious primordial numbers!
+			//- .col-12.col-sm-6.col-xl-3.my-4: .card.h-100
+			//- 	.card-header
+			//- 		h3 365.25
+			//- 	img.card-img-top(src="images/card365-25.png" alt="")
+			//- 	.card-body
+			//- 		p.card-text
+			//- 			| How many days are there from year 2001 to 2100? It may take you quite some time to find the answer if you count in one by one. Therefore, we would like to introduce a better way to calculate the number of days exist during a given period of time accurately.
