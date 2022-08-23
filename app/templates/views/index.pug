@@ -11,7 +11,8 @@ block variables
 
 block content
 	.container
-		#myCarousel.carousel.slide.mb-4(data-bs-ride="false")
+		#myCarousel.carousel.slide.mb-4(data-bs-ride="carousel") 
+			//- CHANGE
 			.carousel-indicators
 				button(type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1")
 				button(type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2")
@@ -45,7 +46,7 @@ block content
 					img.card-img-top(src="images/card"+(cardContent.link || cardContent.title)+".png" alt="")
 					.card-body
 						p.card-text
-							| #{cardContent.description} <br /> Click the card for more
+							| #{cardContent.description} <br /> Click here for more
 			
 			//- .col-12.col-sm-6.col-xl-3.my-4: .card.h-100
 			//- 	.card-header 
